@@ -102,4 +102,13 @@ return array (
       '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
     ),
   ),
+  'mihaildev/yii2-elfinder' => 
+  array (
+    'name' => 'mihaildev/yii2-elfinder',
+    'version' => '1.2.2.0',
+    'alias' => 
+    array (
+      '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
+    ),
+  ),
 );
