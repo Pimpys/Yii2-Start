@@ -111,4 +111,13 @@ return array (
       '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
     ),
   ),
+  'yii2tech/ar-position' => 
+  array (
+    'name' => 'yii2tech/ar-position',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@yii2tech/ar/position' => $vendorDir . '/yii2tech/ar-position',
+    ),
+  ),
 );

@@ -22,7 +22,8 @@
         "yiisoft/yii2-jui": "^2.0",
         "dmstr/yii2-adminlte-asset": "^2.1",
         "mihaildev/yii2-ckeditor": "*",
-        "mihaildev/yii2-elfinder": "*"
+        "mihaildev/yii2-elfinder": "*",
+        "yii2tech/ar-position": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

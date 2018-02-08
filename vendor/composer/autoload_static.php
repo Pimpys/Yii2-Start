@@ -27,6 +27,7 @@ class ComposerStaticInitd4f95d94dd9c74667143605a8236d185
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
+            'yii2tech\\ar\\position\\' => 21,
         ),
         'r' => 
         array (
@@ -127,6 +128,10 @@ class ComposerStaticInitd4f95d94dd9c74667143605a8236d185
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'yii2tech\\ar\\position\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yii2tech/ar-position',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
