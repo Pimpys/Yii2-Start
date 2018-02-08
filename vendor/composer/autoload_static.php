@@ -36,6 +36,10 @@ class ComposerStaticInitd4f95d94dd9c74667143605a8236d185
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'mihaildev\\ckeditor\\' => 19,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -132,6 +136,10 @@ class ComposerStaticInitd4f95d94dd9c74667143605a8236d185
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'mihaildev\\ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mihaildev/yii2-ckeditor',
         ),
         'dmstr\\' => 
         array (
