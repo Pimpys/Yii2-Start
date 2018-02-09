@@ -2,26 +2,38 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$rules = require __DIR__ . '/rules.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'Название проекта',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\dmn',
+            'defaultRoute' => 'welcome',
+            'layout' => 'main'
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Wss6J6sg_YNP_SipBn5evB9PnhWNlpZz',
+            'baseUrl' => ''
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\users\SystemUsersRecord',
             'enableAutoLogin' => true,
+            'loginUrl' => ['user/login']
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -43,14 +55,22 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'action' => \yii\web\UrlNormalizer::ACTION_REDIRECT_PERMANENT,
+            ],
+            'rules' => $rules,
+        ],
+        'assetManager' => [
+            'bundles' => [
+                'dmstr\web\AdminLteAsset' => [
+                    'skin' => 'skin-purple',
+                ],
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
