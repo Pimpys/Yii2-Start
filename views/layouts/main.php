@@ -40,18 +40,53 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/users/login']]
+
+            [
+                'label' => '<span class="glyphicon glyphicon-user"></span> Вход',
+                'items' => [
+                    '<li class="dropdown-header">Вход</li>',
+                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Войти', 'url' => ['/user/login']],
+                    '<li class="divider"></li>',
+                    '<li class="dropdown-header">Зарегистрироваться</li>',
+                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Регистрация', 'url' => ['/user/signup']],
+                ],
+            ]
+
             ) : (
-                '<li>'
-                . Html::beginForm(['/users/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
+
+                Yii::$app->user->can('admin') ? (
+                    [
+                        'label' => '<span class="glyphicon glyphicon-user"></span> Меню',
+                        'items' => [
+                            '<li class="dropdown-header">Выход</li>',
+                            Html::beginForm(['/user/logout'], 'post')
+                            . Html::submitButton(
+                                '<span class="glyphicon glyphicon-log-out"></span> Выйти',
+                                ['class' => 'btn btn-link logout']
+                            )
+                            . Html::endForm(),
+                            '<li class="divider"></li>',
+                            '<li class="dropdown-header">Администрирование</li>',
+                            ['label' => '<span class="glyphicon glyphicon-log-in"></span> Перейти', 'url' => ['/admin']],
+                        ],
+                    ]
+                ) : (
+                    [
+                        'label' => '<span class="glyphicon glyphicon-user"></span> Меню',
+                        'items' => [
+                            '<li class="dropdown-header">Выход</li>',
+                            Html::beginForm(['/user/logout'], 'post')
+                            . Html::submitButton(
+                                '<span class="glyphicon glyphicon-log-out"></span> Выйти',
+                                ['class' => 'btn btn-link logout']
+                            )
+                            . Html::endForm(),
+                        ],
+                    ]
                 )
-                . Html::endForm()
-                . '</li>'
-            )
+            ),
         ],
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>

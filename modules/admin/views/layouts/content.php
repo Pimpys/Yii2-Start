@@ -5,7 +5,6 @@ use yii\helpers\Html;
 ?>
 <div class="content-wrapper">
     <section class="content-header">
-        <h1><?= Html::encode($this->title) ?></h1>
 
         <?=
         Breadcrumbs::widget(

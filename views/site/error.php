@@ -18,10 +18,9 @@ $this->title = $name;
     </div>
 
     <p>
-        The above error occurred while the Web server was processing your request.
+        В то время как веб-сервер обрабатывал ваш запрос. Произошла ошибка <?= Html::encode($this->title) ?> и сломалась кофеварка...
     </p>
     <p>
-        Please contact us if you think this is a server error. Thank you.
+        Пожалуйста, <?= Html::a('свяжитесь', ['site/contact']) ?> с нами, если вы считаете, что это ошибка сервера. Спасибо.
     </p>
-
 </div>

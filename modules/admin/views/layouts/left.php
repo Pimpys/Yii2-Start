@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Html;
+?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -5,10 +8,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <?= Html::img('@web/img/user.png', ['class' => 'img-circle', 'alt' => 'User Image']) ?>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?= Yii::$app->user->identity->email ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -31,7 +34,12 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Навигация', 'options' => ['class' => 'header']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    [
+                        'label' => 'Пользователи',
+                        'icon' => 'users',
+                        'url' => ['/admin/users/index'],
+                        'active' => $this->context->id == 'users',
+                    ],
                     [
                         'label' => 'Разработка',
                         'icon' => 'share',

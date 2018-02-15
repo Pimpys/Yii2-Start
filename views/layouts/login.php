@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-
+use app\widgets\Alert;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -19,8 +19,22 @@ dmstr\web\AdminLteAsset::register($this);
 <body class="login-page">
 
 <?php $this->beginBody() ?>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1">
+        </div>
+        <div class="col-xs-10">
+            <?= Alert::widget() ?>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-1">
+        </div>
+        <!-- /.col -->
+    </div>
 
     <?= $content ?>
+</div>
+
 
 <?php $this->endBody() ?>
 </body>

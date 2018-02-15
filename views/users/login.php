@@ -4,7 +4,10 @@ use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Вход на сайт'
+]);
 $this->title = 'Авторизация';
 
 $fieldOptions1 = [
@@ -24,9 +27,9 @@ $fieldOptions2 = [
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Войдите, чтобы начать сеанс</p>
+        <p class="login-box-msg">Пожалуйста введите ваши данные для входа:</p>
 
-        <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
+        <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => true]); ?>
 
         <?= $form
             ->field($model, 'email', $fieldOptions1)
@@ -52,8 +55,8 @@ $fieldOptions2 = [
 
         <?php ActiveForm::end(); ?>
 
-        <?= Html::a('Я забыл свой пароль', ['#']) ?><br>
-        <?= Html::a('Зарегистрироваться', ['#'], [
+        <?= Html::a('Я забыл свой пароль', ['request-password-reset']) ?><br>
+        <?= Html::a('Зарегистрироваться', ['signup'], [
                 'class' => 'text-center'
         ]) ?>
 

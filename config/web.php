@@ -8,6 +8,7 @@ $config = [
     'id' => 'basic',
     'name' => 'Название проекта',
     'language' => 'ru-RU',
+    'timeZone' => 'Europe/Moscow',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -18,7 +19,7 @@ $config = [
         'admin' => [
             'class' => 'app\modules\admin\dmn',
             'defaultRoute' => 'welcome',
-            'layout' => 'main'
+            'layout' => 'main',
         ],
     ],
     'components' => [
@@ -33,7 +34,11 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\users\SystemUsersRecord',
             'enableAutoLogin' => true,
-            'loginUrl' => ['user/login']
+            'loginUrl' => ['users/login']
+        ],
+		'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
