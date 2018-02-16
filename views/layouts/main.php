@@ -45,10 +45,10 @@ AppAsset::register($this);
                 'label' => '<span class="glyphicon glyphicon-user"></span> Вход',
                 'items' => [
                     '<li class="dropdown-header">Вход</li>',
-                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Войти', 'url' => ['/user/login']],
+                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Войти', 'url' => ['/users/login']],
                     '<li class="divider"></li>',
                     '<li class="dropdown-header">Зарегистрироваться</li>',
-                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Регистрация', 'url' => ['/user/signup']],
+                    ['label' => '<span class="glyphicon glyphicon-log-in"></span> Регистрация', 'url' => ['/users/signup']],
                 ],
             ]
 
@@ -59,7 +59,7 @@ AppAsset::register($this);
                         'label' => '<span class="glyphicon glyphicon-user"></span> Меню',
                         'items' => [
                             '<li class="dropdown-header">Выход</li>',
-                            Html::beginForm(['/user/logout'], 'post')
+                            Html::beginForm(['/users/logout'], 'post')
                             . Html::submitButton(
                                 '<span class="glyphicon glyphicon-log-out"></span> Выйти',
                                 ['class' => 'btn btn-link logout']
@@ -75,7 +75,7 @@ AppAsset::register($this);
                         'label' => '<span class="glyphicon glyphicon-user"></span> Меню',
                         'items' => [
                             '<li class="dropdown-header">Выход</li>',
-                            Html::beginForm(['/user/logout'], 'post')
+                            Html::beginForm(['/users/logout'], 'post')
                             . Html::submitButton(
                                 '<span class="glyphicon glyphicon-log-out"></span> Выйти',
                                 ['class' => 'btn btn-link logout']

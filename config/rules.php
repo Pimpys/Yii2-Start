@@ -19,6 +19,7 @@ return [
     'view/<id:\d+>' => 'site/view',
     'login' => '/users/login',
     'sign-up' => 'users/signup',
+    'logout' => 'users/logout',
 
     'admin' => 'admin/welcome/index',
     'admin/<_c:[\w\-]+>' => 'admin/<_c>/index',
